@@ -1,0 +1,22 @@
+{
+  "name": "picture_organizer",
+  "version": "0.0.1",
+  "description": "Date base picture sorter",
+  "main": "bin/main.js",
+  "author": "Jean Michel GEORGER",
+  "license": "MIT",
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "bin": {
+    "main": "bin/main.js"
+  },
+  "scripts": {
+    "main": "node bin/main.js",
+    "import" : "node bin/jpg_importer.js"
+  },
+  "dependencies": {
+    "exif": "^0.6.0"
+  }
+}
