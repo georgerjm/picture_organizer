@@ -1,5 +1,30 @@
 var exif = require("exif");
+var fs = require("fs");
 
+var myFiles = fs.readdirSync("/home/michel/data/exchange/input");
+
+function myprocess(myList) { 
+
+    function analyse(files){
+        return new Promise((resolve, reject) =>{
+            console.log(files.pop());
+            resolve(files);
+        }); 
+    } 
+
+    analyse(myList).then((success) => { 
+        if (success.length > 0){
+            myprocess(success);
+        } else {
+            console.log("end of process");
+        }    
+    } );
+} 
+
+
+myprocess(myFiles);
+
+/*
 var promise = new Promise((resolve, reject) => {
     console.log("toto");
     var ExifImage = exif.ExifImage;
@@ -20,4 +45,4 @@ promise.then((succes) => {
 } );
 
 console.log("après");
-
+*/
